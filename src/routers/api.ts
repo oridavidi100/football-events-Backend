@@ -1,0 +1,18 @@
+import express from 'express';
+import loginRouter from './login';
+import tokenExtractor from '../midllewares/accessToken';
+import registerRouter from './register';
+import EventRouter from './events';
+import UserRouter from './user';
+const { getAllMessages } = require('../controllers/messages');
+// const { findByDate } = require('../controllers/createEvent');
+const { getAllEvents } = require('../controllers/createEvent');
+const router = express.Router();
+router.get('/allMessages/:room', getAllMessages);
+router.use('/register', registerRouter);
+router.get('/getAllEvents', getAllEvents);
+router.use('/getUser', UserRouter);
+router.use(tokenExtractor);
+router.use('/login', loginRouter);
+router.use('/Event', EventRouter);
+export default router;
