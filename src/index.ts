@@ -56,6 +56,6 @@ app.get('*', function (request, response) {
 });
 app.use(errorHandlerMiddleware);
 
-export const server = httpServer.listen(PORT, () =>
+export const server = httpServer.listen(PORT, '0.0.0.0', () =>
   console.log(`app listening at http://localhost:${PORT}`)
 );
