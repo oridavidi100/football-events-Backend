@@ -17,7 +17,6 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const api_1 = __importDefault(require("./routers/api"));
-const PORT = 5000;
 const app = (0, express_1.default)();
 const errorHandler_1 = __importDefault(require("./midllewares/errorHandler"));
 const config_1 = __importDefault(require("./config"));
@@ -66,4 +65,4 @@ app.get('*', function (request, response) {
     response.sendFile(path_1.default.resolve(__dirname, '../../client', 'index.html'));
 });
 app.use(errorHandler_1.default);
-exports.server = httpServer.listen(PORT, () => console.log(`app listening at http://localhost:${PORT}`));
+exports.server = httpServer.listen(process.env.PORT || 5000, () => console.log(`app listening at http://localhost:${5000}`));

@@ -19,7 +19,7 @@ exports.forgetPassword = (req, res, next) => __awaiter(void 0, void 0, void 0, f
         const { email, nameOfPet, newPassword } = req.body;
         const usersArr = yield User_1.User.find({ email: email });
         if (usersArr.length === 0) {
-            throw { status: 400, message: 'user does not exist' };
+            throw { status: 400, message: 'user  not exist' };
         }
         for (let user of usersArr) {
             if (user.nameOfPet === nameOfPet) {
@@ -31,7 +31,7 @@ exports.forgetPassword = (req, res, next) => __awaiter(void 0, void 0, void 0, f
                     .status(200)
                     .send({ message: 'password changed', username: user.fullName });
             }
-            throw { status: 400, message: 'name of pet not right' };
+            throw { status: 400, message: 'wrong name of pet' };
         }
     }
     catch (error) {
