@@ -28,7 +28,7 @@ const httpServer = (0, http_1.createServer)(app);
 const path_1 = __importDefault(require("path"));
 const io = new socket_io_1.Server(httpServer, {
     cors: {
-        origin: ['http://localhost:3000'],
+        origin: ['https://ori-football-app.herokuapp.com'],
     },
 });
 io.on('connection', socket => {
