@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import Router from './routers/api';
-const PORT = 5000;
 const app = express();
 import errorHandlerMiddleware from './midllewares/errorHandler';
 import config from './config';
@@ -56,8 +55,6 @@ app.get('*', function (request, response) {
 });
 app.use(errorHandlerMiddleware);
 
-export const server = httpServer.listen(
-  process.env.PORT || PORT,
-  '0.0.0.0',
-  () => console.log(`app listening at http://localhost:${PORT}`)
+export const server = httpServer.listen(process.env.PORT || 5000, () =>
+  console.log(`app listening at http://localhost:${5000}`)
 );
