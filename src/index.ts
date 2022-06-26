@@ -55,6 +55,8 @@ app.get('*', function (request, response) {
 });
 app.use(errorHandlerMiddleware);
 
-export const server = httpServer.listen(process.env.PORT || 5000, () =>
-  console.log(`app listening at http://localhost:${5000}`)
+export const server = httpServer.listen(
+  process.env.PORT || 5000,
+  'ori-football-app.herokuapp.com',
+  () => console.log(`app listening at http://localhost:${5000}`)
 );
