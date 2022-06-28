@@ -13,7 +13,7 @@ const httpServer = createServer(app);
 import path from 'path';
 const io = new Server(httpServer, {
   cors: {
-    origin: ['https://ori-football-app.herokuapp.com'],
+    origin: ['https://ori-football-app.herokuapp.com', 'http://localhost:3000'],
   },
 });
 
@@ -49,9 +49,9 @@ app.use(cors()); //cors middleware
 app.use(express.json()); //json middleware
 
 app.use('/api', Router);
-app.use(express.static(path.resolve(__dirname, '../../client')));
+app.use(express.static(path.resolve(__dirname, '../client/index.html')));
 app.get('*', function (request, response) {
-  response.sendFile(path.resolve(__dirname, '../../client', 'index.html'));
+  response.sendFile(path.resolve(__dirname, '../client', 'index.html'));
 });
 app.use(errorHandlerMiddleware);
 
