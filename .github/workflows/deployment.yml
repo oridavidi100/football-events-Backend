@@ -14,8 +14,4 @@ jobs:
         with:
           herokuApiKey: ${{ secrets.HEROKU_API_KEY}}
           herokuAppName: ${{ secrets.HEROKU_APP_NAME}}
-          useDocker: true 
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Pri
+          useDocker: true
