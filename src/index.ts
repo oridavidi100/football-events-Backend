@@ -16,7 +16,7 @@ const io = new Server(httpServer, {
     origin: ['https://ori-football-app.herokuapp.com'],
   },
 });
-//
+
 io.on('connection', socket => {
   socket.on('join', ({ room }) => {
     socket.join(room);
