@@ -49,7 +49,7 @@ app.use(cors()); //cors middleware
 app.use(express.json()); //json middleware
 
 app.use('/api', Router);
-app.use(express.static(path.resolve(__dirname, '../client/index.html')));
+app.use(express.static(path.resolve(__dirname, '../client')));
 app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, '../client', 'index.html'));
 });
