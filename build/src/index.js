@@ -54,7 +54,7 @@ const httpServer = (0, http_1.createServer)(app);
 const path_1 = __importDefault(require('path'));
 const io = new socket_io_1.Server(httpServer, {
   cors: {
-    origin: ['https://ori-football-app.herokuapp.com', 'http://localhost:3000'],
+    origin: ['https://ori-football-app.herokuapp.com'],
   },
 });
 io.on('connection', socket => {
@@ -97,6 +97,7 @@ app.get('*', function (request, response) {
   );
 });
 app.use(errorHandler_1.default);
-exports.server = httpServer.listen(process.env.PORT || 5000, () =>
-  console.log(`app listening at http://localhost:${5000}`)
+console.log(process.env.PORT);
+exports.server = httpServer.listen(process.env.PORT, () =>
+  console.log(`app listening at http://localhost:${process.env.PORT}`)
 );

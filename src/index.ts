@@ -5,7 +5,6 @@ import Router from './routers/api';
 const app = express();
 import errorHandlerMiddleware from './midllewares/errorHandler';
 import config from './config';
-// ""
 const { MONGO_URL } = config;
 import { Server } from 'socket.io';
 import { createServer } from 'http';
@@ -14,7 +13,7 @@ const httpServer = createServer(app);
 import path from 'path';
 const io = new Server(httpServer, {
   cors: {
-    origin: ['https://ori-football-app.herokuapp.com', 'http://localhost:3000'],
+    origin: ['https://ori-football-app.herokuapp.com'],
   },
 });
 
@@ -55,7 +54,7 @@ app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, '../client', 'index.html'));
 });
 app.use(errorHandlerMiddleware);
-
-export const server = httpServer.listen(process.env.PORT || 5000, () =>
-  console.log(`app listening at http://localhost:${5000}`)
+console.log(process.env.port);
+export const server = httpServer.listen(process.env.PORT, () =>
+  console.log(`app listening at http://localhost:${process.env.PORT}`)
 );
