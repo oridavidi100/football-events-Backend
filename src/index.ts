@@ -53,7 +53,6 @@ app.get('*', function (request, response) {
   response.sendFile(path.resolve(__dirname, '../client', 'index.html'));
 });
 app.use(errorHandlerMiddleware);
-console.log(process.env.port);
-export const server = httpServer.listen(process.env.PORT, () =>
-  console.log(`app listening at http://localhost:${process.env.PORT}`)
-);
+export const server = httpServer.listen(process.env.PORT || 5000, () => {
+  console.log(`app listening at http://localhost:${process.env.PORT}`);
+});
