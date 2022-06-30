@@ -10,7 +10,7 @@ COPY tsconfig.json ./
 # Install dependencies
 RUN npm install 
 
-
+# 
 COPY . .
 
 EXPOSE 5000

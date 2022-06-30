@@ -29,7 +29,6 @@ io.on('connection', socket => {
     });
     io.in(room).emit('messageBack', { name, message });
   });
-  //
   socket.on('disconnect', () => {
     // io.emit('messageBack', { name: 'server', message: 'user disconnected' });
   });
