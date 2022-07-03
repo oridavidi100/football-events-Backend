@@ -13,7 +13,7 @@ const httpServer = createServer(app);
 import path from 'path';
 const io = new Server(httpServer, {
   cors: {
-    origin: ['https://ori-football-app.herokuapp.com'],
+    origin: ['https://ori-football-app.herokuapp.com', 'http://localhost:3000'],
   },
 });
 
