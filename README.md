@@ -1,5 +1,5 @@
 # football-events
-**[Frontend](https://github.com/oridavidi100/football-events-frontend)
+[Frontend](https://github.com/oridavidi100/football-events-frontend)
 
 ### Technologies in use - 👩‍💻👨‍💻
 
